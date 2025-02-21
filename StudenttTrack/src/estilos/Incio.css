@@ -1,0 +1,139 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF; /* Blanco */
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Asegura que el body ocupe toda la altura de la pantalla */
+}
+
+/* Cabecera */
+header {
+    background-color: #2F4156; /* Azul oscuro */
+    color: #FFFFFF; /* Blanco */
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%; /* Asegura que la cabecera ocupe el 100% del ancho */
+    box-sizing: border-box; /* Incluye el padding dentro del tamaño del ancho */
+    position: fixed; /* Fija la cabecera en la parte superior */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que esté encima del contenido */
+}
+
+/* Estilos del contenedor de la aplicación */
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px 20px; /* Deja espacio para la cabecera */
+    background-color: #F5EFEB; /* Beige */
+    min-height: 100vh; /* Asegura que la pantalla ocupe toda la altura */
+    box-sizing: border-box; /* Incluye el padding dentro del tamaño total */
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #567CBD; /* Azul medio */
+    color: #FFFFFF; /* Blanco */
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%; /* Asegura que el footer ocupe el 100% del ancho */
+    box-sizing: border-box; /* Incluye el padding dentro del tamaño del ancho */
+    position: fixed; /* Fija el footer al fondo */
+    bottom: 0;
+    left: 0;
+}
+
+/* Estilos generales de la tarjeta */
+.tarjeta {
+    display: flex;
+    background-color: #C8D9E6; /* Azul cielo */
+    border-radius: 10px;
+    margin: 15px 0;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    transition: transform 0.3s ease;
+    width: 500px;
+    height: 300px;
+    max-width: 600px; /* Define un ancho máximo para las tarjetas horizontales */
+    box-sizing: border-box; /* Incluye el padding dentro del tamaño total */
+}
+
+/* Efecto de hover */
+.tarjeta:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen o icono (opcional) de la tarjeta */
+.tarjeta-img {
+    width: 100px; /* Tamaño de la imagen */
+    height: 100px;
+    background-color: #567CBD; /* Azul medio */
+    border-radius: 10px;
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+/* Contenido de la tarjeta */
+.tarjeta-contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el texto verticalmente */
+}
+
+/* Títulos dentro de la tarjeta */
+.tarjeta-contenido .nombre {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2F4156; /* Azul oscuro */
+    margin-bottom: 5px;
+}
+
+/* Texto dentro de la tarjeta */
+.tarjeta-contenido .id {
+    font-size: 16px;
+    color: #2F4156; /* Azul oscuro */
+}
+
+/* Contenedor de las tarjetas */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px; /* Añade espacio entre las tarjetas */
+    padding-bottom: 20px; /* Añade espacio en la parte inferior */
+    flex-grow: 1; /* Asegura que el contenedor de tarjetas ocupe el espacio disponible */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    /* En pantallas pequeñas, las tarjetas ocuparán el 100% del ancho */
+    .tarjeta {
+        width: 100%;
+        max-width: 100%; /* Las tarjetas se ajustarán al tamaño de la pantalla */
+    }
+
+    /* Ajusta el tamaño de la cabecera en pantallas pequeñas */
+    header {
+        font-size: 20px;
+    }
+
+    /* Ajusta el tamaño del pie de página en pantallas pequeñas */
+    footer {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Reduce el tamaño de la fuente de las tarjetas en pantallas muy pequeñas */
+    .tarjeta-contenido .nombre {
+        font-size: 16px;
+    }
+
+    .tarjeta-contenido .id {
+        font-size: 14px;
+    }
+}
