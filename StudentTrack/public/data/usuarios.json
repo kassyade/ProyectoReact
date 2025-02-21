@@ -1,16 +1,17 @@
-[
+{
+  "usuarios":[
     {
       "id": 1,
       "nombre": "admin",
-      "usuario": "admin",
-      "password": "admin123",
+      "usuario": "a",
+      "password": "a",
       "rol": "admin"
     },
     {
       "id": 2,
-      "nombre": "Juan Pérez",
-      "usuario": "juan",
-      "password": "juan123",
+      "nombre": "a",
+      "usuario": "pepe",
+      "password": "a",
       "rol": "usuario"
     },
     {
@@ -21,4 +22,6 @@
       "rol": "usuario"
     }
   ]
+
+}
   

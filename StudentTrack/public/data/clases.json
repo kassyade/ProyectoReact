@@ -8,6 +8,15 @@
         "id": 2,
         "nombre": "prueba"
       }
+    ],
+    "alumnos":[
+      {
+        "idClase":1,
+        "id":1 ,
+        "nombre": "benjamin",
+        "apellido": "vargas"
+
+      }
     ]
   }
   

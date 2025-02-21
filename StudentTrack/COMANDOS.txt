@@ -1,0 +1,6 @@
+npm install
+npm install axios
+npm install -g json-server
+json-server --watch public/data/usuarios.json 
+npm install react-router-dom
+npm run dev

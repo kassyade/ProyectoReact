@@ -1,8 +1,23 @@
 import React from 'react';
 import '../estilos/Incio.css'
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import Clase from './Clase';
 
-const Inicio = ({ clases }) => {
+const Inicio = ({ clases,setClaseSeleccionada }) => {
+
+
+  //iniciamos la constante para enviar al usuario a la clase seleccionada
+const navigate =useNavigate();
+
+  const seleccion =(id)=>{
+    //cambiamos la clase seleccioanda que viene de la app
+    setClaseSeleccionada(id)
+    //redirigimos a clase que ahora tiene el id 
+    navigate('/clase')
+  }
+  
+  
+  
   return (
     <div className="container">
       <header>
@@ -12,11 +27,10 @@ const Inicio = ({ clases }) => {
       {/* Contenedor de las tarjetas */}
       <div className="cards-container"   >
         {clases.map((clase, index) => (
-          <div className="tarjeta" key={index}>
+          <div className="tarjeta" key={index} onClick={()=>seleccion(clase.id)}   >
             <div className="tarjeta-img"></div>
             <div className="tarjeta-contenido">
               <div className="nombre">{clase.nombre}</div>
-              <div className="id">{clase.id}</div>
             </div>
           </div>
         ))}
