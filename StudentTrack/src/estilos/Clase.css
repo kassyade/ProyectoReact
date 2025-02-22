@@ -1,0 +1,71 @@
+/* Clase.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;600&display=swap');
+
+.contenedor-alumnos {
+    margin-top: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #F5EFEB; /* Beige */
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Aplicamos la fuente Roboto */
+}
+
+header {
+    background-color: #567CBD; /* Team */
+    color: #FFFFFF; /* White */
+    font-size: 28px;
+    padding: 15px 25px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Fuente Poppins para el encabezado */
+}
+
+.alumnos-grid {
+    display: flex; /* Usamos flex para organizar los alumnos */
+    flex-direction: column; /* Alineamos los alumnos en columnas */
+    width: 100%; /* Ocupa el 100% del ancho */
+    max-width: 1200px; /* Limita el ancho máximo para mejorar el diseño en pantallas grandes */
+}
+
+.alumno-card {
+    background-color: #FFFFFF; /* White */
+    color: #2F4156; /* Navy */
+    border: 1px solid #C8D9E6; /* Sky blue */
+    font-size: 18px;
+    padding: 20px;
+    text-align: left; /* Alineamos el texto a la izquierda */
+    border-radius: 8px;
+    height: 60px; /* Aumentamos la altura de las filas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif; /* Aplicamos la fuente Roboto */
+    margin-bottom: 10px; /* Espaciado entre tarjetas */
+    width: 100%; /* Cada tarjeta ocupa el 100% del ancho del contenedor */
+}
+
+.alumno-card:nth-child(even) {
+    background-color: #C8D9E6; /* Sky blue: Fila par con diferente color */
+}
+
+.volver-link {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #567CBD; /* Team */
+    border: 1px solid #567CBD;
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.volver-link:hover {
+    background-color: #567CBD; /* Team */
+    color: #FFFFFF; /* White */
+}

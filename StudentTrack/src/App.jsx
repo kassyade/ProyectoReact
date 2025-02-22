@@ -7,9 +7,10 @@ import Inicio from './componentes/Inicio';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import { AuthProvider } from './Login/AuthProvider';
 import Clase from './componentes/Clase';
+import UseStorageState from './servicios/UseStorageState';
 function App() {
   const[clases,setClases]=useState([])
-  const[claseSeleccionada,setClaseSeleccionada]=useState(null)
+  const[claseSeleccionada,setClaseSeleccionada]=UseStorageState("claseSeleccionada",null)
 
   useEffect(
     ()=>{
@@ -19,6 +20,7 @@ function App() {
 
     },[]
   )
+
 
 //console.log(clases)
 
@@ -48,7 +50,7 @@ function App() {
     
     <Route
     path='/clase' 
-    element={<Clase claseSeleccionada={claseSeleccionada} />} 
+    element={<Clase claseSeleccionada={claseSeleccionada}   setClaseSeleccionada={setClaseSeleccionada}/>} 
     />
 
 
