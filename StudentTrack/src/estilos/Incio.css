@@ -25,6 +25,7 @@ header {
 
 /* Estilos del contenedor de la aplicación */
 .container {
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
     padding: 80px 20px 20px; /* Deja espacio para la cabecera */

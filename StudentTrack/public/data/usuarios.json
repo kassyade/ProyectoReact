@@ -1,27 +1,25 @@
 {
-  "usuarios":[
+  "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "admin",
       "usuario": "a",
       "password": "a",
       "rol": "admin"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "a",
       "usuario": "pepe",
       "password": "a",
       "rol": "usuario"
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "María López",
       "usuario": "maria",
       "password": "maria123",
       "rol": "usuario"
     }
   ]
-
 }
-  

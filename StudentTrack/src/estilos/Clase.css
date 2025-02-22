@@ -1,71 +1,171 @@
-/* Clase.css */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;600&display=swap');
+/* --- ESTILOS GENERALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-.contenedor-alumnos {
-    margin-top: 200px;
+body, html {
+    height: 100%;
     width: 100%;
+    background-color: #F5EFEB; /* Fondo beige */
+    color: #2F4156; /* Texto en navy */
+}
+
+/* --- CABECERA --- */
+header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-color: #2F4156; /* Navy */
+    color: #FFFFFF; /* Texto en blanco */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.contenedor-alumnos {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    background-color: #F5EFEB; /* Beige */
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif; /* Aplicamos la fuente Roboto */
-}
-
-header {
-    background-color: #567CBD; /* Team */
-    color: #FFFFFF; /* White */
-    font-size: 28px;
-    padding: 15px 25px;
-    text-align: center;
-    border-radius: 8px;
-    margin-bottom: 30px;
     width: 100%;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; /* Fuente Poppins para el encabezado */
+    height: calc(100vh - 70px);
+    padding-top: 70px;
+    overflow-y: auto;
 }
 
+/* --- TABLA DE ALUMNOS --- */
 .alumnos-grid {
-    display: flex; /* Usamos flex para organizar los alumnos */
-    flex-direction: column; /* Alineamos los alumnos en columnas */
-    width: 100%; /* Ocupa el 100% del ancho */
-    max-width: 1200px; /* Limita el ancho máximo para mejorar el diseño en pantallas grandes */
+    width: 100%;
+    max-width: 100%; /* Elimina la restricción de ancho */
+    border-collapse: collapse;
 }
-
+/* --- FILAS DE ALUMNOS --- */
 .alumno-card {
-    background-color: #FFFFFF; /* White */
+    display: flex;
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+    justify-content: space-between;
+    background-color: #C8D9E6; /* Sky blue */
+    padding: 15px;
+    border-bottom: 1px solid #567CBD; /* Team color */
+    font-size: 18px;
     color: #2F4156; /* Navy */
-    border: 1px solid #C8D9E6; /* Sky blue */
-    font-size: 18px;
-    padding: 20px;
-    text-align: left; /* Alineamos el texto a la izquierda */
-    border-radius: 8px;
-    height: 60px; /* Aumentamos la altura de las filas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Roboto', sans-serif; /* Aplicamos la fuente Roboto */
-    margin-bottom: 10px; /* Espaciado entre tarjetas */
-    width: 100%; /* Cada tarjeta ocupa el 100% del ancho del contenedor */
 }
 
-.alumno-card:nth-child(even) {
-    background-color: #C8D9E6; /* Sky blue: Fila par con diferente color */
+.alumno-card:nth-child(odd) {
+    background-color: #FFFFFF; /* Blanco */
 }
 
+.alumno-card span {
+    flex: 1;
+    padding: 8px;
+    text-align: left;
+}
+
+/* --- BOTÓN DE VOLVER --- */
 .volver-link {
-    display: inline-block;
-    margin-top: 30px;
-    font-size: 18px;
+    margin-top: 20px;
     text-decoration: none;
-    color: #567CBD; /* Team */
-    border: 1px solid #567CBD;
-    padding: 12px 18px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
+    color: white;
+    background-color: #567CBD; /* Team color */
+    padding: 10px 15px;
+    border-radius: 5px;
 }
 
 .volver-link:hover {
+    background-color: #2F4156; /* Navy */
+}
+
+/* Fondo oscuro detrás del modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+    z-index: 999; /* Asegura que esté detrás del modal */
+  }
+  
+  /* Estilos del modal */
+  .modal {
+    background-color: #F5EFEB; /* Beige */
+    color: #2F4156; /* Navy */
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Asegura que el modal esté por encima del fondo */
+  }
+  
+  /* Estilos del título */
+  .modal h2 {
+    color: #2F4156; /* Navy */
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilos de los campos de texto */
+  .modal p {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Estilos de los campos de entrada */
+  .modal input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #C8D9E6; /* Sky blue */
+    border-radius: 4px;
+  }
+  
+  /* Estilos del botón */
+  .modal button {
     background-color: #567CBD; /* Team */
     color: #FFFFFF; /* White */
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .modal button:hover {
+    background-color: #2F4156; /* Navy */
+  }
+  
+  /* Estilos para el botón de cerrar */
+  .modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+    .contenedor-alumnos {
+        height: auto;
+        padding-top: 60px;
+    }
+
+    .alumno-card {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .alumno-card span {
+        text-align: center;
+        padding: 5px 0;
+    }
 }

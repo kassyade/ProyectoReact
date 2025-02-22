@@ -29,6 +29,20 @@
 
       },
       {
+        "idClase":1,
+        "id":5 ,
+        "nombre": "benjamin",
+        "apellido": "vargas"
+
+      },
+      {
+        "idClase":1,
+        "id":7 ,
+        "nombre": "Juan",
+        "apellido": "cerdo"
+
+      },
+      {
         "idClase":2,
         "id":2 ,
         "nombre": "pedro",
