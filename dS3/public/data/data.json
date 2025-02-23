@@ -1,23 +1,18 @@
 {
-    "usuarios": [
+  "usuarios": [
       { "id": "1", "nombre": "agustin", "pass": "$2b$10$WTH6RkWFpyozV3pJsrZko.TKaW9qfVX6TXqI2Ss78WMHIkaUjHDdy" },
       { "id": "2", "nombre": "ana", "pass": "456" },
       { "id": "3", "nombre": "juanito", "pass": "789" }
-    ],
-    "productos": [
-      { "id": "1", "precio":15 , "nombre": "PRINT OSCURO EXTASIS", "url": "https://wosds3.com/wp-content/uploads/2024/06/Print_Horizontal_B-1024x1024.jpg" },
-      { "id": "2","precio":65 , "nombre": "BUZO DESCARTABLE", "url": "https://wosds3.com/wp-content/uploads/2024/07/FRENTE-1024x1024.jpg" },
-      { "id": "3","precio":40 , "nombre": "VINILO OSCURO EXTASIS", "url": "https://wosds3.com/wp-content/uploads/2023/12/FRONT-1024x725.jpg" },
-      { "id": "4","precio":30 , "nombre": "GORRA", "url": "https://wosds3.com/wp-content/uploads/2024/08/WOS_Tienda_Gorra-1024x1024.jpg" },
-      { "id": "6","precio":40 , "nombre": "VINILO DESCARTABLE", "url": "https://i.pinimg.com/736x/95/a9/35/95a935f1f726a78a48492ca9cf6950bc.jpg" },
-      { "id": "7","precio":40 , "nombre": "VINILO CARAVANA", "url": "https://i.pinimg.com/736x/b1/38/09/b138090d8e929fba0ba6de179e3e22f8.jpg" },
-      { "id": "8","precio":10 , "nombre": "PEGATINA TRES PUNTOS SUSPENSIVOS", "url": "https://i.pinimg.com/736x/a6/86/f0/a686f0918fc7f21c0ede2a7000e8b246.jpg" },
-      { "id": "7","precio":40 , "nombre": "VINILO TERRAZA", "url": "https://i.pinimg.com/736x/81/92/45/819245465bd8678fa79388c86973d814.jpg" },
-      { "id": "7","precio":40 , "nombre": "VINILO QUEREME", "url": "https://i.pinimg.com/736x/c3/71/e1/c371e1291c515728ebc61c209ccded5a.jpg" }
-
-
-    ]
-
-
-  }
-
+  ],
+  "productos": [
+      { "id": "1", "precio": 15, "nombre": "PRINT OSCURO EXTASIS", "url": "https://wosds3.com/wp-content/uploads/2024/06/Print_Horizontal_B-1024x1024.jpg", "descripcion": "Póster exclusivo de 'Oscuro Éxtasis', con un diseño impactante y de alta calidad." },
+      { "id": "2", "precio": 65, "nombre": "BUZO DESCARTABLE", "url": "https://wosds3.com/wp-content/uploads/2024/07/FRENTE-1024x1024.jpg", "descripcion": "Buzo oversize de algodón con diseño de 'Descartable'. Edición limitada." },
+      { "id": "3", "precio": 40, "nombre": "VINILO OSCURO EXTASIS", "url": "https://wosds3.com/wp-content/uploads/2023/12/FRONT-1024x725.jpg", "descripcion": "Vinilo exclusivo del álbum 'Oscuro Éxtasis'. Edición para coleccionistas." },
+      { "id": "4", "precio": 30, "nombre": "GORRA", "url": "https://wosds3.com/wp-content/uploads/2024/08/WOS_Tienda_Gorra-1024x1024.jpg", "descripcion": "Gorra ajustable con logo bordado. Perfecta para cualquier ocasión." },
+      { "id": "6", "precio": 40, "nombre": "VINILO DESCARTABLE", "url": "https://i.pinimg.com/736x/95/a9/35/95a935f1f726a78a48492ca9cf6950bc.jpg", "descripcion": "Edición especial en vinilo del álbum 'Descartable'. Sonido de alta calidad." },
+      { "id": "7", "precio": 40, "nombre": "VINILO CARAVANA", "url": "https://i.pinimg.com/736x/b1/38/09/b138090d8e929fba0ba6de179e3e22f8.jpg", "descripcion": "Vinilo exclusivo del sencillo 'Caravana'. Una joya para los fans." },
+      { "id": "8", "precio": 10, "nombre": "PEGATINA TRES PUNTOS SUSPENSIVOS", "url": "https://i.pinimg.com/736x/a6/86/f0/a686f0918fc7f21c0ede2a7000e8b246.jpg", "descripcion": "Pegatina con el icónico diseño de los tres puntos suspensivos. Tamaño ideal para cualquier superficie." },
+      { "id": "9", "precio": 40, "nombre": "VINILO TERRAZA", "url": "https://i.pinimg.com/736x/81/92/45/819245465bd8678fa79388c86973d814.jpg", "descripcion": "Vinilo de 'Terraza', un track esencial para cualquier coleccionista de vinilos." },
+      { "id": "10", "precio": 40, "nombre": "VINILO QUEREME", "url": "https://i.pinimg.com/736x/c3/71/e1/c371e1291c515728ebc61c209ccded5a.jpg", "descripcion": "Edición limitada en vinilo del sencillo 'Quereme'. Sonido envolvente y de alta calidad." }
+  ]
+}

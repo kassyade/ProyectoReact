@@ -5,8 +5,9 @@ import { AuthProvider } from './Login/AuthProvider'
 import { Route, Routes } from 'react-router-dom'
 import Tienda from './componentes/Tienda'
 import  RutasProtegidas from  './Login/RutasProtegidas'
+import { useState } from 'react'
 function App() {
-
+      const [carrito,setCarrito]=useState([]);
   return (
     <div className="contendor">
 
@@ -33,7 +34,7 @@ function App() {
       path='/tienda' 
       element={
         <RutasProtegidas>
-        <Tienda/>
+        <Tienda   carrito={carrito} setCarrito={setCarrito} />
     </RutasProtegidas>
       }  />
 
