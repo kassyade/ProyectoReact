@@ -1,13 +1,6 @@
+/* Fondo negro por defecto */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  background-color: rgb(49, 48, 48);
+  min-height: 100vh;
+  width: 100%;
 }
-
-body {
-  background-color: blanchedalmond;
-}
-
-
-

@@ -1,0 +1,7 @@
+npm install
+npm install jsonserver
+npm install axios 
+npm install react-router-dom
+npm install bcryptjs
+npx json-server (rutaNombre).json
+npm run dev

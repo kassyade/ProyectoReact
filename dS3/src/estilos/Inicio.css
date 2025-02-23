@@ -1,0 +1,46 @@
+.cabecera {
+    border: solid 0.5px;
+    border-color: black;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    padding: 0 20px;
+    font-family: 'Helvetica', 'Arial', sans-serif; /* Añadido aquí */
+}
+
+.logo {
+    padding: 10px 20px;
+    margin: 0 10px;
+    color: rgb(211, 99, 34);
+    transition: background-color 0.3s ease;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(./imagenes/logo.png);
+    flex-shrink: 0;
+}
+
+.botonesCabecera {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.boton {
+    padding: 10px 20px;
+    margin: 0 10px;
+    color: rgb(233, 107, 34);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Helvetica', 'Arial', sans-serif; /* Añadido aquí */
+}
+
+.boton:hover {
+    color: white;
+}
