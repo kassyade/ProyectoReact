@@ -2,12 +2,18 @@ import React, { useState,useEffect } from 'react';
 import '../estilos/Tienda.css'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { buscarProducto,incrementarCantidad } from '../herramientas/buscarProducto';
 const Tienda = ({carrito,setCarrito}) => {
-
+            //Lista de productos normales
     const [productos,setProductos]=useState([]);
+    //estado del modal carrito
     const [modalCarrito,setModalCarrito]=useState(false);
+    //estado del modal info
     const[modalInfo,setModalInfo]=useState(false);
+    //objeto de info
     const[productoInfo,setProductoInfo]=useState({});
+    //lista de la cesta(no se repite)
+    const[cesta,setCesta]=useState([]);
 
     useEffect(
         ()=>{
@@ -23,9 +29,19 @@ const Tienda = ({carrito,setCarrito}) => {
      // console.log(productos)
       const añadir=(producto)=>{
         setCarrito([...carrito,producto])
+        const nombre = producto.nombre
 
+        if(buscarProducto(nombre,cesta) === null){
+            setCesta([...cesta, {"nombre" : nombre, "cantidad":1}])
+            console.log("Se añade un nuevo:", {"nombre" : nombre, "cantidad":1} )
+          }else{
+           
+             setCesta(incrementarCantidad(cesta,nombre))
+            
+          }     
+              
       }
-      console.log(carrito)
+     // console.log(carrito)
 
       const info =(producto)=>{
         setModalInfo(true)
@@ -34,7 +50,7 @@ const Tienda = ({carrito,setCarrito}) => {
       }
 
 
-
+      console.log(cesta)
 
     return (
         <div className='tienda' >
@@ -77,15 +93,17 @@ const Tienda = ({carrito,setCarrito}) => {
                 ))}
             </div>
 
-
-
+                    
+                
             {modalCarrito && (
                 <div className="modal-carrito">
-                    <h3>Carrito</h3>
+                     <h3>Carrito</h3>
                     <ul>
-                        {carrito.map((producto, index) => (
-                            <li key={index}>{producto.nombre} : {producto.precio}€</li>
-                        ))}
+                        {cesta.map(
+                        
+                        )
+                        
+                        }
                     </ul>
                     <button className="boton-cerrar" onClick={() => setModalCarrito(false)}>Cerrar</button>
                 </div>

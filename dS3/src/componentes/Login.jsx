@@ -58,15 +58,12 @@ const Login = () => {
     };
   
 
-
     return (
+    
       <div className="login-container">
-      <div className="login-box">
-          <div className="logo-container">
-              <img src="/ruta-del-logo.png" alt="Logo" />
-          </div>
+          <div className="logo-container"></div> {/* Mitad izquierda */}
           <div className="form-container">
-              <h2>Inicio de sesión</h2>
+              <h1>DS3</h1>
               <p>Usuario</p>
               <input
                   type='text'
@@ -85,8 +82,8 @@ const Login = () => {
               <p><button onClick={procesarFormulario}>Entrar</button></p>
           </div>
       </div>
-  </div>
-    );
+  );
+  
 }
 
 export default Login;

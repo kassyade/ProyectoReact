@@ -1,66 +1,64 @@
 /* estilos/Login.css */
-.login-container {
+body {
+  background-color: rgb(49, 48, 48);
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #181717; /* Beige */
 }
 
-.login-box {
+.login-container {
   display: flex;
-  width: 60%;
-  background: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
 .logo-container {
-  flex: 1;
-  background-color: #4f5052; /* Team */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.logo-container img {
-  max-width: 100%;
-  height: auto;
+  flex: 1; /* Ocupa la mitad izquierda */
+  background-image: url(https://i.pinimg.com/736x/ed/d6/0b/edd60b0149f79241c35b3655b0d59d5e.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .form-container {
-  flex: 1;
-  padding: 40px;
+  flex: 1; /* Ocupa la mitad derecha */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  background: white;
+  padding: 40px;
+  background-image: url(https://i.pinimg.com/736x/6d/bf/3a/6dbf3a74083b9b7bd498be3964f8604c.jpg);
+
 }
 
-h2 {
+h1 {
   text-align: center;
-  color: #2F4156; /* Navy */
+  color: #111111;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 p {
   font-weight: bold;
-  color: #2F4156;
+  color: #151616;
   margin-bottom: 5px;
+  
 }
 
 input {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #303031; /* Sky blue */
+  border: 1px solid #303031;
   border-radius: 5px;
 }
 
 button {
   width: 100%;
   padding: 10px;
-  background:rgb(233, 107, 34); /* Team */
+  background: #ff2a00;
   color: white;
   border: none;
   border-radius: 5px;
@@ -69,7 +67,7 @@ button {
 }
 
 button:hover {
-  background: #868c92; /* Navy */
+  background: #868c92;
 }
 
 .error {
