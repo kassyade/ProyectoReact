@@ -15,19 +15,22 @@ const Login = () => {
     //PARA CONSULTAR EL ESTADO SE USA USEAUTH
     // Ciframos la contraseña
     const cifrarPassword = () => {
+      
+      //podemos cifrar contraseñas desde aqui 
+
       // Generamos salt
       const salt = bcrypt.genSaltSync(10)
       // Hasheamos la contraseña
       const hash = bcrypt.hashSync(password, salt)
   
       console.log(`salt: ${salt}`)
-      console.log(`mensaje cifrado: ${hash}`)
+      console.log(`Contraseña cifrada: ${hash}`)
   
       return hash
     }
   
     const procesarFormulario = async (e) => {
-    
+      //cifrarPassword()
       e.preventDefault();
       //console.log(cifrarPassword())
     

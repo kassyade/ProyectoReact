@@ -10,6 +10,7 @@ import Carrito from './componentes/Carrito'
 import Admin from './componentes/Admin'
 import { useEffect } from 'react'
 import axios from 'axios'
+import Footer from './componentes/Footer'
 function App() {
       
         //lista del carriot (si se repiten)
@@ -90,6 +91,7 @@ function App() {
       </Routes>
     
     </AuthProvider>
+    <Footer/>
     </div>
   )
 }

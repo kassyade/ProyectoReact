@@ -1,7 +1,7 @@
 {
   "usuarios": [
       { "id": "1", "nombre": "agustin", "pass": "$2b$10$WTH6RkWFpyozV3pJsrZko.TKaW9qfVX6TXqI2Ss78WMHIkaUjHDdy", "administrador":1 },
-      { "id": "2", "nombre": "ana", "pass": "456", "administrador":0 },
+      { "id": "2", "nombre": "ana", "pass": "$2b$10$Z7mmgdbRAuz/Pzjb6KZnRuTU5IYcniuG18thUhFbFZWAIITpXadii", "administrador":0 },
       { "id": "3", "nombre": "juanito", "pass": "789", "administrador":0 }
   ],
   "productos": [
