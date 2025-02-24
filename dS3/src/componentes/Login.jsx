@@ -12,6 +12,7 @@ const Login = () => {
     const { login } = useAuth();
     const navigate = useNavigate();
   
+    //PARA CONSULTAR EL ESTADO SE USA USEAUTH
     // Ciframos la contraseña
     const cifrarPassword = () => {
       // Generamos salt
@@ -41,6 +42,7 @@ const Login = () => {
   
           if (esCorrecta) {
             //le pasamos al login ete formato de datos para que los guarde 
+            //Proviene de Login/Authprovider
             login({ nombre: usuario.nombre, administrador: usuario.administrador });
       
             navigate('/')

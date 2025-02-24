@@ -8,13 +8,28 @@ import  RutasProtegidas from  './Login/RutasProtegidas'
 import { useState } from 'react'
 import Carrito from './componentes/Carrito'
 import Admin from './componentes/Admin'
+import { useEffect } from 'react'
+import axios from 'axios'
 function App() {
       
         //lista del carriot (si se repiten)
         const [carrito,setCarrito]=useState([]);
        //lista de la cesta(no se repite)
           const[cesta,setCesta]=useState([]);
-      
+          //Lista de productos normales
+         const [productos,setProductos]=useState([]);
+
+
+    useEffect(
+        ()=>{
+          axios.get("/data/data.json")
+          .then( (respuesta)=>setProductos(respuesta.data.productos)        
+              )
+          .catch((e)=>console.log("error al pillar los datos",e))
+              
+          },[]
+  )
+          
       
   return (
     <div className="contendor">
@@ -55,7 +70,7 @@ function App() {
       path='/admin' 
       element={
         <RutasProtegidas>
-          <Admin   />
+          <Admin productos={productos} setProductos={setProductos} />
         </RutasProtegidas>
       }  />
 
@@ -68,7 +83,7 @@ function App() {
       path='/tienda' 
       element={
         <RutasProtegidas>
-        <Tienda   carrito={carrito} setCarrito={setCarrito}  cesta={cesta} setCesta={setCesta} />
+        <Tienda  productos={productos} setProductos={setProductos}  carrito={carrito} setCarrito={setCarrito}  cesta={cesta} setCesta={setCesta} />
     </RutasProtegidas>
       }  />
 

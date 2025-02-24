@@ -9,8 +9,11 @@ const Carrito = ({cesta,setCesta,carrito}) => {
     const total = cesta.map((c) => c.precio * c.cantidad).reduce((acc, val) => acc + val, 0);
     //console.log(cesta)
 
-    
- 
+    //VERIFICACION  DE ADMIN
+    const{user}=useAuth();//ussamos use auth ya que almacena el contenxo 
+    //console.log(user)
+    const modoAdmin =true ? user.administrador===1 :false
+    //console.log(modoAdmin)
 
 
     const reducir=(producto)=>{
@@ -47,15 +50,17 @@ const Carrito = ({cesta,setCesta,carrito}) => {
                         </div>
                     </Link>
 
-                    { modoAdmin && (
+                    {modoAdmin &&
+                    (
                     <Link to="/admin" style={{ color: 'inherit', textDecoration: 'none' }}>
                     <div className="boton">
                         <h3>ADMIN</h3> 
                         </div>
                     </Link>
-
-                    )  }
-      
+                    )
+                    
+                    }
+                   
                 </div>
        
             </div>

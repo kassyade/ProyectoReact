@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../Login/AuthProvider';
 import { buscarProducto,incrementarCantidad } from '../herramientas/buscarProducto';
-const Tienda = ({carrito,setCarrito,cesta,setCesta}) => {
-    //Lista de productos normales
-    const [productos,setProductos]=useState([]);
+const Tienda = ({carrito,setCarrito,cesta,setCesta,productos,setProductos}) => {
+
     //estado del modal carrito
     const [modalCarrito,setModalCarrito]=useState(false);
     //estado del modal info
@@ -14,20 +13,15 @@ const Tienda = ({carrito,setCarrito,cesta,setCesta}) => {
     //objeto de info
     const[productoInfo,setProductoInfo]=useState({});
    
+    //VERIFICACION  DE ADMIN
+    const{user}=useAuth();//ussamos use auth ya que almacena el contenxo 
+    //console.log(user)
+    const modoAdmin =true ? user.administrador===1 :false
+    //console.log(modoAdmin)
 
-        
 
-        useEffect(
-        ()=>{
-          axios.get("/data/data.json")
-          .then( (respuesta)=>setProductos(respuesta.data.productos)
-            
-        )
-          .catch((e)=>console.log("error al pillar los datos",e))
-    
-        },[]
-      )
 
+ 
      // console.log(productos)
       const añadir=(producto)=>{
         setCarrito([...carrito,producto])
@@ -49,6 +43,11 @@ const Tienda = ({carrito,setCarrito,cesta,setCesta}) => {
       const info =(producto)=>{
         setModalInfo(true)
         setProductoInfo(producto)
+
+      }
+
+      const abrirCesta=()=>{
+        setModalCarrito(true)
 
       }
 
@@ -81,9 +80,21 @@ const Tienda = ({carrito,setCarrito,cesta,setCesta}) => {
                         </div>
                     </Link>
 
-                        <div className="boton" onClick={  ()=> setModalCarrito(true)}   >
+                    {modoAdmin &&
+                    (
+                    <Link to="/admin" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    <div className="boton">
+                        <h3>ADMIN</h3> 
+                        </div>
+                    </Link>
+                    )
+                    
+                    }
+
+                        <div className="boton"  onClick={abrirCesta} >
                         <h3>X</h3> 
                         </div>
+                   
                 </div>
        
             </div>
@@ -122,7 +133,7 @@ const Tienda = ({carrito,setCarrito,cesta,setCesta}) => {
                 <div className="modal-info">
                     <div className="info-card">
                         <button className="close-btn" onClick={() => setModalInfo(false)}>X</button>
-                        <h2>{productoInfo.nombre}</h2>
+                        <h1>{productoInfo.nombre}</h1>
                         <img src={productoInfo.url} alt={productoInfo.nombre} />
                         <p>{productoInfo.precio} €</p>
                         <p>{productoInfo.descripcion}</p>

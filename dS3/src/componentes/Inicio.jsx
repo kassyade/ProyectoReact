@@ -5,6 +5,12 @@ import { useAuth } from '../Login/AuthProvider';
 
 
 const Inicio = () => {
+    //VERIFICACION  DE ADMIN
+    const{user}=useAuth();//ussamos use auth ya que almacena el contenxo 
+    //console.log(user)
+    const modoAdmin =true ? user.administrador===1 :false
+    //console.log(modoAdmin)
+
 
 
     return (
@@ -26,7 +32,25 @@ const Inicio = () => {
                         <h3>INICIO</h3> 
                         </div>
                     </Link>
-              
+
+
+                    <Link to="/carrito" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    <div className="boton">
+                        <h3>CARRITO</h3> 
+                        </div>
+                    </Link>
+
+                    {modoAdmin &&
+                    (
+                    <Link to="/admin" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    <div className="boton">
+                        <h3>ADMIN</h3> 
+                        </div>
+                    </Link>
+                    )
+                    
+                    }
+                   
                 </div>
        
             </div>
