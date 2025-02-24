@@ -60,25 +60,32 @@ const Login = () => {
 
 
     return (
-        <div className="login-container">
-            <h2>Inicio de sesión</h2>
-            <p>Usuario</p>
-            <input
-                type='text'
-                value={usuario}
-                onChange={(e) => setUsuario(e.target.value)}
-                required
-            />
-            <p>Contraseña</p>
-            <input
-                type='password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-            />
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            <p><button onClick={procesarFormulario}>Entrar</button></p>
-        </div>
+      <div className="login-container">
+      <div className="login-box">
+          <div className="logo-container">
+              <img src="/ruta-del-logo.png" alt="Logo" />
+          </div>
+          <div className="form-container">
+              <h2>Inicio de sesión</h2>
+              <p>Usuario</p>
+              <input
+                  type='text'
+                  value={usuario}
+                  onChange={(e) => setUsuario(e.target.value)}
+                  required
+              />
+              <p>Contraseña</p>
+              <input
+                  type='password'
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+              />
+              {error && <p className="error">{error}</p>}
+              <p><button onClick={procesarFormulario}>Entrar</button></p>
+          </div>
+      </div>
+  </div>
     );
 }
 
