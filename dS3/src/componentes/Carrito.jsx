@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../estilos/Carrito.css'
+import { useAuth } from '../Login/AuthProvider';
 import { reducirCantidad } from '../herramientas/buscarProducto';
 const Carrito = ({cesta,setCesta,carrito}) => {
 
     //calculamos el total del carrito
     const total = cesta.map((c) => c.precio * c.cantidad).reduce((acc, val) => acc + val, 0);
-    console.log(cesta)
+    //console.log(cesta)
+
+    
+    //PESTAÑA DE ADMIN
+    const {user}=useAuth();
+    //console.log(user)
+    const modoAdmin =true ?user.administrador===1 : false; 
+    //console.log(modoAdmin)
+
+
+
+
 
     const reducir=(producto)=>{
         
@@ -15,7 +27,7 @@ const Carrito = ({cesta,setCesta,carrito}) => {
 
         setCesta(cestaActualizada)
     }
-    console.log(cesta)
+   // console.log(cesta)
     return (
         <div className='carrito'>
             <div className="cabecera">
@@ -42,6 +54,15 @@ const Carrito = ({cesta,setCesta,carrito}) => {
                         </div>
                     </Link>
 
+                    { modoAdmin && (
+                    <Link to="/admin" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    <div className="boton">
+                        <h3>ADMIN</h3> 
+                        </div>
+                    </Link>
+
+                    )  }
+      
                 </div>
        
             </div>

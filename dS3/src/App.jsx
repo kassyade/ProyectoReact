@@ -7,6 +7,7 @@ import Tienda from './componentes/Tienda'
 import  RutasProtegidas from  './Login/RutasProtegidas'
 import { useState } from 'react'
 import Carrito from './componentes/Carrito'
+import Admin from './componentes/Admin'
 function App() {
       
         //lista del carriot (si se repiten)
@@ -48,6 +49,16 @@ function App() {
           <Carrito  cesta={cesta}  setCesta={setCesta} carrito={carrito} />
         </RutasProtegidas>
       }  />
+
+
+      <Route    
+      path='/admin' 
+      element={
+        <RutasProtegidas>
+          <Admin   />
+        </RutasProtegidas>
+      }  />
+
 
 
 
