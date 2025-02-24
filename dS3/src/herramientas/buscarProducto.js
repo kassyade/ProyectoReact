@@ -8,12 +8,24 @@ export function buscarProducto(nombre, informacion) {
 export function incrementarCantidad(informacion,nombre){ 
   return informacion.map(producto => {
     if(producto.nombre === nombre){   
-      return { "nombre": producto.nombre, "cantidad":producto.cantidad+=1}
+      return { "nombre": producto.nombre, "cantidad":producto.cantidad+=1 ,"precio":producto.precio}
     }   
    
     return producto
   })  
 }
+
+
+export function reducirCantidad(informacion,nombre){ 
+  return informacion.map(producto => {
+    if(producto.nombre === nombre){   
+      return { "nombre": producto.nombre, "cantidad":producto.cantidad-=1 ,"precio":producto.precio}
+    }   
+   
+    return producto
+  })  
+}
+
 
 export function obtenerCantidadTotal(informacion){
   let total = 0

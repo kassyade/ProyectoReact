@@ -1,8 +1,8 @@
 {
   "usuarios": [
-      { "id": "1", "nombre": "agustin", "pass": "$2b$10$WTH6RkWFpyozV3pJsrZko.TKaW9qfVX6TXqI2Ss78WMHIkaUjHDdy" },
-      { "id": "2", "nombre": "ana", "pass": "456" },
-      { "id": "3", "nombre": "juanito", "pass": "789" }
+      { "id": "1", "nombre": "agustin", "pass": "$2b$10$WTH6RkWFpyozV3pJsrZko.TKaW9qfVX6TXqI2Ss78WMHIkaUjHDdy", "administrador":1 },
+      { "id": "2", "nombre": "ana", "pass": "456", "administrador":0 },
+      { "id": "3", "nombre": "juanito", "pass": "789", "administrador":0 }
   ],
   "productos": [
       { "id": "1", "precio": 15, "nombre": "PRINT OSCURO EXTASIS", "url": "https://wosds3.com/wp-content/uploads/2024/06/Print_Horizontal_B-1024x1024.jpg", "descripcion": "Póster exclusivo de 'Oscuro Éxtasis', con un diseño impactante y de alta calidad." },

@@ -2,9 +2,10 @@ import React, { useState,useEffect } from 'react';
 import '../estilos/Tienda.css'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useAuth } from '../Login/AuthProvider';
 import { buscarProducto,incrementarCantidad } from '../herramientas/buscarProducto';
-const Tienda = ({carrito,setCarrito}) => {
-            //Lista de productos normales
+const Tienda = ({carrito,setCarrito,cesta,setCesta}) => {
+    //Lista de productos normales
     const [productos,setProductos]=useState([]);
     //estado del modal carrito
     const [modalCarrito,setModalCarrito]=useState(false);
@@ -12,10 +13,12 @@ const Tienda = ({carrito,setCarrito}) => {
     const[modalInfo,setModalInfo]=useState(false);
     //objeto de info
     const[productoInfo,setProductoInfo]=useState({});
-    //lista de la cesta(no se repite)
-    const[cesta,setCesta]=useState([]);
-
-    useEffect(
+   
+    //buscamos dentro del contexto rol del usuario
+    const{user}= useAuth();
+   // console.log(user.administrador)
+   
+        useEffect(
         ()=>{
           axios.get("/data/data.json")
           .then( (respuesta)=>setProductos(respuesta.data.productos)
@@ -30,13 +33,14 @@ const Tienda = ({carrito,setCarrito}) => {
       const añadir=(producto)=>{
         setCarrito([...carrito,producto])
         const nombre = producto.nombre
-
+        const precio = producto.precio
+        //le pasamos el nombre del producto y el array de la cesta 
         if(buscarProducto(nombre,cesta) === null){
-            setCesta([...cesta, {"nombre" : nombre, "cantidad":1}])
-            console.log("Se añade un nuevo:", {"nombre" : nombre, "cantidad":1} )
+            setCesta([...cesta, {"nombre" : nombre, "cantidad":1,"precio":precio}])
+           // console.log("Se añade un nuevo:", {"nombre" : nombre, "cantidad":1} )
           }else{
-           
-             setCesta(incrementarCantidad(cesta,nombre))
+                        //pasamos la centa y el nomnbre del producto 
+             setCesta(incrementarCantidad(cesta,nombre,precio))
             
           }     
               
@@ -50,7 +54,7 @@ const Tienda = ({carrito,setCarrito}) => {
       }
 
 
-      console.log(cesta)
+      //console.log(cesta)
 
     return (
         <div className='tienda' >
@@ -70,9 +74,13 @@ const Tienda = ({carrito,setCarrito}) => {
                         <h3>INICIO</h3> 
                         </div>
                     </Link>
+
+
+                    <Link to="/carrito" style={{ color: 'inherit', textDecoration: 'none' }}>
                     <div className="boton">
                         <h3>CARRITO</h3> 
                         </div>
+                    </Link>
 
                         <div className="boton" onClick={  ()=> setModalCarrito(true)}   >
                         <h3>X</h3> 
@@ -97,10 +105,12 @@ const Tienda = ({carrito,setCarrito}) => {
                 
             {modalCarrito && (
                 <div className="modal-carrito">
-                     <h3>Carrito</h3>
+                     <h3>Cesta</h3>
                     <ul>
                         {cesta.map(
-                        
+                            (x,index)=>(
+                                <li key={index}>{x.nombre} :{x.cantidad} </li>
+                            )
                         )
                         
                         }
