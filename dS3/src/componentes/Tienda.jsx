@@ -14,10 +14,9 @@ const Tienda = ({carrito,setCarrito,cesta,setCesta}) => {
     //objeto de info
     const[productoInfo,setProductoInfo]=useState({});
    
-    //buscamos dentro del contexto rol del usuario
-    const{user}= useAuth();
-   // console.log(user.administrador)
-   
+
+        
+
         useEffect(
         ()=>{
           axios.get("/data/data.json")

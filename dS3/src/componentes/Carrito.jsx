@@ -10,14 +10,7 @@ const Carrito = ({cesta,setCesta,carrito}) => {
     //console.log(cesta)
 
     
-    //PESTAÑA DE ADMIN
-    const {user}=useAuth();
-    //console.log(user)
-    const modoAdmin =true ?user.administrador===1 : false; 
-    //console.log(modoAdmin)
-
-
-
+ 
 
 
     const reducir=(producto)=>{

@@ -13,12 +13,13 @@ export const AuthProvider = ({ children }) => {
   const login = (userData) => {
     setUser(userData)
     // con localstorage almacenamos localmente el user y se queda almacenado
-    localStorage.setItem("user", JSON.stringify(userData))
+    localStorage.setItem("usuario", JSON.stringify(userData))
   };
+  
   const logout = () => {
     setUser(null)
     // borramos el localstorage de user
-    localStorage.removeItem("user")
+    localStorage.removeItem("usuario")
   };
 
   return (

@@ -33,16 +33,16 @@ const Login = () => {
       ServicioUsuario.login(usuario)
         .then((response) => {
          if(response.data.length !== 0 ){ 
+         // console.log(response.data)
           const usuario = response.data[0]
           const hashUsuario = usuario.pass
-
+          //console.log(usuario)
           const esCorrecta = bcrypt.compareSync(password, hashUsuario)
   
           if (esCorrecta) {
-            login(usuario.nombre)
-            const nombre = usuario.nombre
-            const administrador = usuario.administrador
-            localStorage.setItem('usuario', JSON.stringify({nombre, administrador })); //guardamos en el local el rol del usuario 
+            //le pasamos al login ete formato de datos para que los guarde 
+            login({ nombre: usuario.nombre, administrador: usuario.administrador });
+      
             navigate('/')
           } else {
             setError("Contraseña incorrecta")
