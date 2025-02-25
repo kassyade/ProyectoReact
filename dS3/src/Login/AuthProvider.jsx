@@ -5,6 +5,15 @@ import UseStorageState from '../servicios/UseStorageState';
 // Es el contexto con el que trabaja la aplicación
 const AuthContext = createContext();
 
+
+//PODEMOS TOMAR LOGIN USER LOGOUT
+/**
+ *     const{user}=useAuth()
+ *    const{login}=useAuth()
+ *    const{logout}=useAuth()
+ * 
+ */
+
 export const AuthProvider = ({ children }) => {
   // const [user, setUser] = useState(null);
   // Con esto el usuario toma el valor almacenado, si se está iniciando sesión estará vacío

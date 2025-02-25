@@ -1,7 +1,8 @@
 import React from 'react';
 import '../estilos/Inicio.css'
 import { Link } from 'react-router-dom';
-import { useAuth } from '../Login/AuthProvider';
+import { AuthProvider, useAuth } from '../Login/AuthProvider';
+
 
 
 const Inicio = () => {
@@ -11,7 +12,12 @@ const Inicio = () => {
     const modoAdmin =true ? user.administrador===1 :false
     //console.log(modoAdmin)
 
-
+    //CERRAMOS lA SESION
+    //Tomamos el logout e Authprovider
+    const{logout}=useAuth()
+    const cerrarSesion =()=>{
+        logout()
+    }
 
     return (
 
@@ -19,13 +25,13 @@ const Inicio = () => {
             <div className="cabecera">
                 <div className="logo"></div>
                 <div className="botonesCabecera">
-                <div className="boton">
-                    {/* Coloca el Link alrededor del texto */}
-                    <Link to="/tienda" style={{ color: 'inherit', textDecoration: 'none' }}>
-                        <h3>TIENDA</h3>
-                    </Link>
-                </div>
-         
+                    <div className="boton">
+                        {/* Coloca el Link alrededor del texto */}
+                        <Link to="/tienda" style={{ color: 'inherit', textDecoration: 'none' }}>
+                            <h3>TIENDA</h3>
+                        </Link>
+                    </div>
+            
                     {/* Coloca el Link alrededor del texto */}
                     <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
                     <div className="boton">
@@ -50,8 +56,13 @@ const Inicio = () => {
                     )
                     
                     }
+
+                        <div className="boton">
+                        <h3 onClick={cerrarSesion} > CERRAR SESIÓN</h3> 
+                        </div>
                    
                 </div>
+
        
             </div>
 

@@ -16,6 +16,18 @@ const Carrito = ({cesta,setCesta,carrito}) => {
     //console.log(modoAdmin)
 
 
+        //CERRAMOS lA SESION
+        //Tomamos el logout e Authprovider
+        const{logout}=useAuth()
+        const cerrarSesion =()=>{
+            logout()
+        }
+
+
+
+
+
+
     const reducir=(producto)=>{
         
         const nuevaCesta=   reducirCantidad(cesta,producto.nombre)
@@ -60,6 +72,10 @@ const Carrito = ({cesta,setCesta,carrito}) => {
                     )
                     
                     }
+
+                        <div className="boton">
+                        <h3 onClick={cerrarSesion} > CERRAR SESIÓN</h3> 
+                        </div>
                    
                 </div>
        

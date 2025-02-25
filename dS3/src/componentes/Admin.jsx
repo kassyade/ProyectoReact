@@ -29,6 +29,19 @@ const Admin = ({productos,setProductos}) => {
     };
 
 
+            //CERRAMOS lA SESION
+        //Tomamos el logout e Authprovider
+        const{logout}=useAuth()
+        const cerrarSesion =()=>{
+            logout()
+        }
+
+
+
+
+
+
+
     return (
         <div className='admin'>
             <div className="cabecera">
@@ -65,6 +78,9 @@ const Admin = ({productos,setProductos}) => {
                     )
                     
                     }
+                        <div className="boton">
+                        <h3 onClick={cerrarSesion} > CERRAR SESIÓN</h3> 
+                        </div>
                    
                 </div>
        

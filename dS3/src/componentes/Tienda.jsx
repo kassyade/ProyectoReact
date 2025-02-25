@@ -20,6 +20,13 @@ const Tienda = ({carrito,setCarrito,cesta,setCesta,productos,setProductos}) => {
     //console.log(modoAdmin)
 
 
+        //CERRAMOS lA SESION
+        //Tomamos el logout e Authprovider
+        const{logout}=useAuth()
+        const cerrarSesion =()=>{
+            logout()
+        }
+
 
  
      // console.log(productos)
@@ -59,12 +66,12 @@ const Tienda = ({carrito,setCarrito,cesta,setCesta,productos,setProductos}) => {
             <div className="cabecera">
                 <div className="logo"></div>
                 <div className="botonesCabecera">
-                <div className="boton">
+                    <div className="boton">
                     {/* Coloca el Link alrededor del texto */}
                     <Link to="/tienda" style={{ color: 'inherit', textDecoration: 'none' }}>
                         <h3>TIENDA</h3>
                     </Link>
-                </div>
+                     </div>
          
                     {/* Coloca el Link alrededor del texto */}
                     <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
@@ -95,6 +102,11 @@ const Tienda = ({carrito,setCarrito,cesta,setCesta,productos,setProductos}) => {
                         <h3>X</h3> 
                         </div>
                    
+
+
+                        <div className="boton">
+                        <h3 onClick={cerrarSesion} > CERRAR SESIÓN</h3> 
+                        </div>
                 </div>
        
             </div>
