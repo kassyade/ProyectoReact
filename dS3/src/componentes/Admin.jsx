@@ -17,13 +17,16 @@ const Admin = ({productos,setProductos}) => {
 
 
 
-      // Estado para editar producto
+      // PARA EDITAR PRODUCTO
   const [productoEditado, setProductoEditado] = useState(null);
   const [nuevoNombre, setNuevoNombre] = useState('');
   const [nuevoPrecio, setNuevoPrecio] = useState('');
   const [nuevaDescripcion, setNuevaDescripcion] = useState('');
   const [nuevaUrl, setNuevaUrl] = useState('');
-    //CERRAMOS lA SESION
+   
+  
+  
+  //CERRAMOS lA SESION
     //Tomamos el logout e Authprovider
     const{logout}=useAuth()
     const cerrarSesion =()=>{
@@ -158,9 +161,6 @@ const Admin = ({productos,setProductos}) => {
                 />
                 <button onClick={crearProducto}>Crear</button>
             </div>
-
-
-
 
             <table className='tablaAdmin'>
                 <thead>

@@ -4,4 +4,5 @@ npm install axios
 npm install react-router-dom
 npm install bcryptjs
 npx json-server (rutaNombre).json
+npm install --save font-awesome
 npm run dev
