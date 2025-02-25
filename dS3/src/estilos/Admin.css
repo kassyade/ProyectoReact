@@ -8,9 +8,51 @@
     padding: 20px;
     flex-wrap: wrap; /* Permite que los elementos se ajusten si la pantalla es pequeña */
 }
+/* Estilos para el fondo oscuro que cubre toda la pantalla */
+.modal-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Estilos para el contenido del modal */
+.modal-contenido {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px; /* Ancho del modal */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilos del título dentro del modal */
+
+
+/* Botón de cerrar modal */
+.boton-cerrar {
+    background-color: #101111;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.boton-cerrar:hover {
+    background-color: #505255;
+}
 
 .formulario {
     flex: 1;
+    margin-top: 100px;
     max-width: 30%; /* Limita el tamaño del formulario */
     padding: 15px;
     background-color: #f9f9f9;

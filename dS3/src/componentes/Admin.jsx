@@ -16,6 +16,23 @@ const Admin = ({productos,setProductos}) => {
     const[url,setUrl]=useState('');
 
 
+
+      // Estado para editar producto
+  const [productoEditado, setProductoEditado] = useState(null);
+  const [nuevoNombre, setNuevoNombre] = useState('');
+  const [nuevoPrecio, setNuevoPrecio] = useState('');
+  const [nuevaDescripcion, setNuevaDescripcion] = useState('');
+  const [nuevaUrl, setNuevaUrl] = useState('');
+    //CERRAMOS lA SESION
+    //Tomamos el logout e Authprovider
+    const{logout}=useAuth()
+    const cerrarSesion =()=>{
+            logout()
+    }
+
+
+    ///CRUD CREAR BORRAR ACTUALIZAR
+
     const crearProducto =  () => {
         const nuevoProducto = {
             nombre,precio,descripcion,url
@@ -29,12 +46,35 @@ const Admin = ({productos,setProductos}) => {
     };
 
 
-            //CERRAMOS lA SESION
-        //Tomamos el logout e Authprovider
-        const{logout}=useAuth()
-        const cerrarSesion =()=>{
-            logout()
+    const[modalActualizar,setModalActualizar]=useState(false);
+
+    const abrirModal = (producto) => {
+        setProductoEditado(producto);
+        setNuevoNombre(producto.nombre);
+        setNuevoPrecio(producto.precio);
+        setNuevaDescripcion(producto.descripcion);
+        setNuevaUrl(producto.url);
+        setModalActualizar(true)
+      };
+    // Actualizar producto
+    const editarProducto = () => {
+        const productosActualizados = productos.map((producto) => {
+        if (producto === productoEditado) {
+            return { ...producto, nombre: nuevoNombre, precio: nuevoPrecio, descripcion: nuevaDescripcion, url: nuevaUrl };
         }
+        return producto;
+        });
+        setProductos(productosActualizados);
+        setModalActualizar(false);
+        setProductoEditado(null);
+    };
+
+
+
+    const eliminarProducto = (producto) => {
+        setProductos(productos.filter((p) => p.url !== producto.url));
+    };
+    
 
 
 
@@ -129,6 +169,7 @@ const Admin = ({productos,setProductos}) => {
                         <td>Precio</td>
                         <td>Descripcion</td>
                         <td>URL</td>
+                        <td>Acciones</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -140,12 +181,56 @@ const Admin = ({productos,setProductos}) => {
                                     <td>{a.precio}</td>
                                     <td>{a.descripcion}</td>
                                     <td>{a.url}</td>
+                                    <td>
+                                    <button onClick={() => abrirModal(a)}>Editar</button>
+                                    <button onClick={()=>eliminarProducto(a)} >Eliminar</button>
+                                    </td>
                                 </tr>
                             )
                         )
                     }
                 </tbody>
             </table>
+
+            {modalActualizar && (
+                <div className="modal-fondo">
+                    <div className="modal-contenido">
+                        <h3>Actualiza el producto:</h3>
+                        <p>Nombre</p>
+                        <input
+                            type="text"
+                            value={nuevoNombre}
+                            onChange={(e) => setNuevoNombre(e.target.value)}
+                            required
+                        />
+                        <p>Precio</p>
+                        <input
+                            type="number"
+                            value={nuevoPrecio}
+                            onChange={(e) => setNuevoPrecio(Number(e.target.value))}
+                            required
+                        />
+                        <p>Descripción</p>
+                        <input
+                            type="text"
+                            value={nuevaDescripcion}
+                            onChange={(e) => setNuevaDescripcion(e.target.value)}
+                            required
+                        />
+                        <p>URL</p>
+                        <input
+                            type="text"
+                            value={nuevaUrl}
+                            onChange={(e) => setNuevaUrl(e.target.value)}
+                            required
+                        />
+                        <button className="boton-cerrar" onClick={editarProducto}>
+                            Guardar cambios
+                        </button>
+                    </div>
+                </div>
+            )}
+
 
 
         </div>
